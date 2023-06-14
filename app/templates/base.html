@@ -1,0 +1,54 @@
+<html>
+    <style>
+        body {
+            margin: 0;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+          }
+        .nav-options {
+        display: inline;
+        margin-left: 20px;
+        padding: 30;
+        text-decoration: none;
+        color: white;
+        border-color: rgb(255, 0, 0) ;
+        border: 50px;
+        }
+        .nav-bar {
+            background-color: rgb(74, 72, 71);
+            height: 50px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .link-html{
+            text-decoration: none;
+            color: white;
+        }
+          
+    </style>
+    <body>
+        <nav class="nav-bar">
+            <ul>
+                <li class="nav-options">Olá, {{ user.name.capitalize }}</li>
+                <li class="nav-options"><a class="link-html" href={% url "pipeline" %} >Pipeline</a></li>
+                <li class="nav-options"><a class="link-html" href={% url "tasks" %} >Tarefas</a></li>
+                <li class="nav-options"><a class="link-html" href={% url "tasks_form" %} >Nova Tarefa</a></li>
+            </ul>
+            
+        </nav>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            Truckme Soluções Digitais
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+    <style>
+        form {
+            align-items: center;
+            margin-left: 500px;
+        }
+        .field-config{
+            padding: 10px;
+            align-items: center;
+            display: flex;
+        }
+        .field-config-btn{
+            padding: 10px;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table> 
+                {% for field in form %}
+                <div class="field-config">
+                    {{field.label}}
+                </div>
+                    {{ field}}
+                </div>
+                    {% endfor %}
+                <div class="field-config-btn">
+                    <input type="submit"  value="Cadastrar" class="btn btn-primary">
+                </div>
+            </table>
+            
+        </form>
+</body>
+
+
+{% endblock %}
